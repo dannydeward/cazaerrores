@@ -1,0 +1,52 @@
+[
+  {
+    "correcta": "acérrimo",
+    "incorrectas": ["asérrimo", "aférrimo"],
+    "nivel": 1
+  },
+  {
+    "correcta": "aversión",
+    "incorrectas": ["adverción", "adversión"],
+    "nivel": 1
+  },
+  {
+    "correcta": "beneficencia",
+    "incorrectas": ["benefisencia", "beneficiencia"],
+    "nivel": 1
+  },
+  {
+    "correcta": "coger",
+    "incorrectas": ["koger", "cojer"],
+    "nivel": 1
+  },
+  {
+    "correcta": "computarizar",
+    "incorrectas": ["computarisar", "computerizar"],
+    "nivel": 2
+  },
+  {
+    "correcta": "consanguinidad",
+    "incorrectas": ["conzanguinidad", "consanguineidad"],
+    "nivel": 2
+  },
+  {
+    "correcta": "conciencia",
+    "incorrectas": ["consiencia", "consciencia"],
+    "nivel": 1
+  },
+  {
+    "correcta": "contrición",
+    "incorrectas": ["contricion", "contricción"],
+    "nivel": 2
+  },
+  {
+    "correcta": "convalecencia",
+    "incorrectas": ["convaslecencia", "convalescencia"],
+    "nivel": 2
+  },
+  {
+    "correcta": "constipado",
+    "incorrectas": ["coztipado", "costipado"],
+    "nivel": 1
+  }
+]
