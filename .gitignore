@@ -1,0 +1,16 @@
+﻿# Flutter
+.dart_tool/
+build/
+*.iml
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# IDE / OS
+.vscode/
+.idea/
+Thumbs.db
+
+# Datos sensibles / Crudos
+diccionario_limpio.csv
+testers_log.jsonl
+assets/data/banco_preguntas.json.bak
