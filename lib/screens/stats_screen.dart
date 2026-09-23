@@ -16,6 +16,8 @@ class _StatsScreenState extends State<StatsScreen> {
   int correctas = 0;
   int incorrectas = 0;
 
+  String error = "";
+
   @override
   void initState() {
     super.initState();
@@ -23,15 +25,28 @@ class _StatsScreenState extends State<StatsScreen> {
   }
 
   Future<void> cargarEstadisticas() async {
-    final stats = await StatsService.obtenerEstadisticas();
+    try {
+      print("Entró a cargar estadísticas");
 
-    setState(() {
-      mejorPuntuacion = stats["mejorPuntuacion"] ?? 0;
-      partidasJugadas = stats["partidasJugadas"] ?? 0;
-      correctas = stats["correctas"] ?? 0;
-      incorrectas = stats["incorrectas"] ?? 0;
-      cargando = false;
-    });
+      final stats = await StatsService.obtenerEstadisticas();
+
+      print(stats);
+
+      setState(() {
+        mejorPuntuacion = stats["mejorPuntuacion"] ?? 0;
+        partidasJugadas = stats["partidasJugadas"] ?? 0;
+        correctas = stats["correctas"] ?? 0;
+        incorrectas = stats["incorrectas"] ?? 0;
+        cargando = false;
+      });
+    } catch (e) {
+      print("ERROR STATS: $e");
+
+      setState(() {
+        cargando = false;
+        error = e.toString();
+      });
+    }
   }
 
   @override
@@ -40,6 +55,17 @@ class _StatsScreenState extends State<StatsScreen> {
       return const Scaffold(
         body: Center(
           child: CircularProgressIndicator(),
+        ),
+      );
+    }
+
+    if (error.isNotEmpty) {
+      return Scaffold(
+        appBar: AppBar(
+          title: const Text("Estadísticas"),
+        ),
+        body: Center(
+          child: Text(error),
         ),
       );
     }
