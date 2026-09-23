@@ -12,7 +12,17 @@ class CazaErroresApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'CazaErrores',
+      title: 'Gramaticador',
+
+      builder: (context, child) {
+        return Center(
+          child: SizedBox(
+            width: 390,
+            child: child,
+          ),
+        );
+      },
+
       home: const HomeScreen(),
     );
   }
