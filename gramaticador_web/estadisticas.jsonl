@@ -1,0 +1,54 @@
+{"tester": "Danny", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-24T12:21:52.997875"}
+{"tester": "Danny", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-24T12:29:01.317381"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "aguachare", "respuesta_dada": "aguashare", "vidas_restantes": 2}, "timestamp_servidor": "2026-09-24T12:30:02.468579"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "embroquelaste", "respuesta_dada": "embloquelaste", "vidas_restantes": 1}, "timestamp_servidor": "2026-09-24T12:31:34.540544"}
+{"tester": "Danny", "evento": "leccion_completada", "datos": {"estacion_final": 1, "puntos_totales": 120, "correctas": 12, "incorrectas": 2}, "timestamp_servidor": "2026-09-24T12:32:17.939022"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "tuteábamos", "respuesta_dada": "htuteábamos", "vidas_restantes": 0}, "timestamp_servidor": "2026-09-24T12:32:25.976363"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "chicoleo", "respuesta_dada": "chicoreo", "vidas_restantes": 0}, "timestamp_servidor": "2026-09-24T12:42:50.963164"}
+{"tester": "Danny", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-24T12:51:34.665380"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "amedrentador", "respuesta_dada": "anedrentador", "vidas_restantes": 2}, "timestamp_servidor": "2026-09-24T12:52:22.477946"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "esponjarán", "respuesta_dada": "esponjalán", "vidas_restantes": 1}, "timestamp_servidor": "2026-09-24T12:52:24.667829"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "ensayalaré", "respuesta_dada": "enzayalaré", "vidas_restantes": 0}, "timestamp_servidor": "2026-09-24T12:52:26.442651"}
+{"tester": "Danny", "evento": "abandono_por_vidas", "datos": {"estacion_final": 1, "puntos_totales": 0, "correctas": 0, "incorrectas": 3}, "timestamp_servidor": "2026-09-24T12:52:27.663701"}
+{"tester": "Danny", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-24T13:21:09.068934"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "vegeta", "respuesta_dada": "veget", "vidas_restantes": 2}, "timestamp_servidor": "2026-09-24T13:21:39.865398"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "azonzarían", "respuesta_dada": "asonzarían", "vidas_restantes": 1}, "timestamp_servidor": "2026-09-24T13:21:50.354980"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "urpila", "respuesta_dada": "ulpila", "vidas_restantes": 0}, "timestamp_servidor": "2026-09-24T13:21:53.182979"}
+{"tester": "Danny", "evento": "abandono_por_vidas", "datos": {"estacion_final": 1, "puntos_totales": 30, "correctas": 3, "incorrectas": 3}, "timestamp_servidor": "2026-09-24T13:21:54.514902"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "citoplasma", "respuesta_dada": "citoplasna", "vidas_restantes": 2}, "timestamp_servidor": "2026-09-24T15:25:04.398326"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "trifurque", "respuesta_dada": "trifuque", "vidas_restantes": 1}, "timestamp_servidor": "2026-09-24T15:25:39.134935"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "pinzote", "respuesta_dada": "pinsote", "vidas_restantes": 0}, "timestamp_servidor": "2026-09-24T15:25:49.827946"}
+{"tester": "Danny", "evento": "abandono_por_vidas", "datos": {"estacion_final": 1, "puntos_totales": 100, "correctas": 7, "incorrectas": 3}, "timestamp_servidor": "2026-09-24T15:25:51.249960"}
+{"tester": "Danny", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-24T22:09:51.005618"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "fenica", "respuesta_dada": "fenisa", "vidas_restantes": 2}, "timestamp_servidor": "2026-09-24T22:45:27.581867"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "pitillera", "respuesta_dada": "pitillela", "vidas_restantes": 1}, "timestamp_servidor": "2026-09-24T22:45:47.980317"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "enjutásemos", "respuesta_dada": "enjutácemos", "vidas_restantes": 0}, "timestamp_servidor": "2026-09-24T22:46:07.520846"}
+{"tester": "Danny", "evento": "abandono_por_vidas", "datos": {"estacion_final": 1, "puntos_totales": 30, "correctas": 3, "incorrectas": 3}, "timestamp_servidor": "2026-09-24T22:46:08.976907"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "peluseásemos", "respuesta_dada": "peluseásenos", "vidas_restantes": 2}, "timestamp_servidor": "2026-09-24T22:46:28.559701"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "mollearíais", "respuesta_dada": "hmollearíais", "vidas_restantes": 1}, "timestamp_servidor": "2026-09-24T22:46:55.826030"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "obtendrían", "respuesta_dada": "obtedrían", "vidas_restantes": 0}, "timestamp_servidor": "2026-09-24T22:59:52.925139"}
+{"tester": "Danny", "evento": "abandono_por_vidas", "datos": {"estacion_final": 1, "puntos_totales": 130, "correctas": 10, "incorrectas": 3}, "timestamp_servidor": "2026-09-24T23:00:03.610137"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "encorcha", "respuesta_dada": "encolcha", "vidas_restantes": 2}, "timestamp_servidor": "2026-09-24T23:00:15.337135"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "junciste", "respuesta_dada": "junsiste", "vidas_restantes": 1}, "timestamp_servidor": "2026-09-24T23:01:00.833357"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "mohatráremos", "respuesta_dada": "nohatráremos", "vidas_restantes": 0}, "timestamp_servidor": "2026-09-24T23:01:24.871004"}
+{"tester": "Danny", "evento": "abandono_por_vidas", "datos": {"estacion_final": 1, "puntos_totales": 170, "correctas": 4, "incorrectas": 3}, "timestamp_servidor": "2026-09-24T23:02:52.137826"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "jadié", "respuesta_dada": "jadi", "vidas_restantes": 2}, "timestamp_servidor": "2026-09-24T23:03:00.246824"}
+{"tester": "Danny", "evento": "leccion_completada", "datos": {"estacion_final": 1, "puntos_totales": 300, "correctas": 13, "incorrectas": 1}, "timestamp_servidor": "2026-09-24T23:05:58.370548"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "implará", "respuesta_dada": "implalá", "vidas_restantes": 1}, "timestamp_servidor": "2026-09-24T23:06:06.803245"}
+{"tester": "Danny", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "rochaste", "respuesta_dada": "roshaste", "vidas_restantes": 0}, "timestamp_servidor": "2026-09-24T23:06:32.342205"}
+{"tester": "Danny", "evento": "abandono_por_vidas", "datos": {"estacion_final": 1, "puntos_totales": 310, "correctas": 1, "incorrectas": 2}, "timestamp_servidor": "2026-09-24T23:06:34.106369"}
+{"tester": "Tester", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-24T23:18:41.921703"}
+{"tester": "juanita", "evento": "inicio_desde_landing", "datos": {"navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"}, "timestamp_servidor": "2026-09-24T23:37:58.702947"}
+{"tester": "juanito", "evento": "inicio_desde_landing", "datos": {"navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"}, "timestamp_servidor": "2026-09-24T23:39:10.958225"}
+{"tester": "juanito", "evento": "inicio_desde_landing", "datos": {"navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"}, "timestamp_servidor": "2026-09-24T23:47:19.790472"}
+{"tester": "juanito", "evento": "inicio_desde_landing", "datos": {"navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"}, "timestamp_servidor": "2026-09-24T23:47:35.554140"}
+{"tester": "juanito", "evento": "inicio_desde_landing", "datos": {"navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"}, "timestamp_servidor": "2026-09-24T23:48:33.139964"}
+{"tester": "juanito", "evento": "inicio_desde_landing", "datos": {"navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"}, "timestamp_servidor": "2026-09-24T23:50:21.076280"}
+{"tester": "juanito", "evento": "inicio_desde_landing", "datos": {"navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"}, "timestamp_servidor": "2026-09-24T23:51:06.581569"}
+{"tester": "juanito", "evento": "inicio_desde_landing", "datos": {"navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/153.0.0.0 Safari/537.36"}, "timestamp_servidor": "2026-09-24T23:53:52.255074"}
+{"tester": "juanito", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-24T23:53:54.793906"}
+{"tester": "juanito", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "harben", "respuesta_dada": "arben", "vidas_restantes": 2}, "timestamp_servidor": "2026-09-24T23:54:16.141100"}
+{"tester": "juanito", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "rufianesca", "respuesta_dada": "rufianezca", "vidas_restantes": 1}, "timestamp_servidor": "2026-09-24T23:54:29.501746"}
+{"tester": "juanito", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "yermaras", "respuesta_dada": "yernaras", "vidas_restantes": 0}, "timestamp_servidor": "2026-09-24T23:54:35.084216"}
+{"tester": "Danny", "evento": "abandono_por_vidas", "datos": {"estacion_final": 1, "puntos_totales": 30, "correctas": 3, "incorrectas": 3}, "timestamp_servidor": "2026-09-24T23:54:37.549122"}
+{"tester": "juanito", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-25T00:03:34.139904"}
