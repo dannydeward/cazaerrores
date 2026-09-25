@@ -55,3 +55,5 @@
 {"tester": "juanito", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-25T02:04:47.479937"}
 {"tester": "juanito", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-25T02:04:53.328211"}
 {"tester": "juanito", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-25T02:41:14.954310"}
+{"tester": "juanito", "evento": "inicio_desde_landing", "datos": {"navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"}, "timestamp_servidor": "2026-09-25T14:04:40.811938"}
+{"tester": "juanito", "evento": "inicio_desde_landing", "datos": {"navegador": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36"}, "timestamp_servidor": "2026-09-25T14:22:29.015127"}

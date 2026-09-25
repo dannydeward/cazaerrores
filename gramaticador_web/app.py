@@ -32,8 +32,10 @@ def registrar_evento():
 @app.route('/data/banco_preguntas.json.gz')
 def servir_banco():
     ruta_carpeta = os.path.join(app.root_path, 'static', 'data')
-    # Servimos el archivo comprimido
-    return send_from_directory(ruta_carpeta, 'banco_preguntas.json.gz', mimetype='application/gzip')
+    response = send_from_directory(ruta_carpeta, 'banco_preguntas.json.gz', mimetype='application/gzip')
+    response.headers['Content-Encoding'] = 'gzip'
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return response
 
 # Ruta 4: Servir el video
 @app.route('/video/cham_intro.mp4')
