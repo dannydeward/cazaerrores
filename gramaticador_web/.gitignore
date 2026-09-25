@@ -1,0 +1,11 @@
+# Archivos de Python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+
+# Datos locales de prueba (no subir a internet)
+estadisticas.jsonl
+
+# El JSON gigante original (solo subimos el comprimido .gz)
+static/data/banco_preguntas.json
