@@ -7793,7 +7793,7 @@ var $async$a3C=A.P(function(a,a0){if(a===1){o.push(a0)
 s=p}for(;;)switch(s){case 0:if($.a3A.length!==0){s=1
 break}p=4
 s=7
-return A.H(A.aF7(A.fD("ramdanny1.pythonanywhere.com")),$async$a3C)
+return A.H(A.aF7(A.fD("https://ramdanny1.pythonanywhere.com/data/banco_preguntas.json.gz")),$async$a3C)
 case 7:n=a0
 if(n.b===200){i=A.anJ(n.w,0,null,0)
 if(i.DM()!==35615)A.a3(A.ams("Invalid GZip Signature"))
@@ -22942,7 +22942,7 @@ return A.N($async$a7Y,r)},
 ym(a,b,c){return A.aAy(a,b,c)},
 aAy(a,b,c){var s=0,r=A.O(t.H),q=1,p=[],o,n,m,l,k,j,i
 var $async$ym=A.P(function(d,e){if(d===1){p.push(e)
-s=q}for(;;)switch(s){case 0:m=A.fD("http://127.0.0.1:5000/api/log")
+s=q}for(;;)switch(s){case 0:m=A.fD("ramdanny1.pythonanywhere.com")
 l=a==null?A.u(t.N,t.z):a
 k=t.N
 j=A.aG(["tester",c,"evento",b,"datos",l],k,t.K)
