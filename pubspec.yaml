@@ -13,6 +13,9 @@ dependencies:
 
   shared_preferences: ^2.5.3
   cupertino_icons: ^1.0.8
+  http: ^1.1.0 # Agrega esta línea
+  archive: ^3.4.9  # 
+  
 
 dev_dependencies:
   flutter_test:
@@ -20,11 +23,16 @@ dev_dependencies:
 
   flutter_lints: ^6.0.0
 
+
+  
+
 flutter:
   uses-material-design: true
 
   assets:
-    - assets/banco_preguntas.json
+  
     - assets/backgrounds/
     - assets/avatar/
     - assets/icons/ 
+
+ 

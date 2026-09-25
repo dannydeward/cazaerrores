@@ -2,6 +2,10 @@ import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/services.dart' show rootBundle;
 import '../models/pregunta.dart';
+import 'package:archive/archive.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 
 class QuestionBankService {
   static final Random _random = Random();
@@ -9,17 +13,31 @@ class QuestionBankService {
   static List<Map<String, dynamic>> _bancoCompleto = [];
   static bool _cargado = false;
 
-  static Future<void> cargarBanco() async {
-    if (_cargado) return;
+    static Future<void> cargarBanco() async {
+    if (_bancoCompleto.isNotEmpty) return; // Si ya está cargado, no hacer nada
+
     try {
-      // ️ VERIFICA QUE ESTA RUTA COINCIDA EXACTAMENTE CON TU pubspec.yaml
-      final jsonString = await rootBundle.loadString('assets/banco_preguntas.json');
-      final data = json.decode(jsonString) as List<dynamic>;
-      _bancoCompleto = data.map((e) => e as Map<String, dynamic>).toList();
-      _cargado = true;
-      print("✅ Banco cargado: ${_bancoCompleto.length} preguntas");
+      // 1. Descargar el archivo comprimido desde Flask
+      final response = await http.get( Uri.parse('http://127.0.0.1:5000/data/banco_preguntas.json'),    );
+
+      if (response.statusCode == 200) {
+        // 2. Descomprimir los bytes GZIP en memoria
+        final decodedBytes = GZipDecoder().decodeBytes(response.bodyBytes);
+        
+        // 3. Convertir los bytes descomprimidos a texto (UTF-8)
+        final jsonString = utf8.decode(decodedBytes);
+        
+        // 4. Leer el JSON
+        final data = json.decode(jsonString) as List<dynamic>;
+        _bancoCompleto = data.map((e) => Map<String, dynamic>.from(e)).toList();
+        
+        print("✅ Banco cargado y descomprimido desde Flask: ${_bancoCompleto.length} preguntas");
+      } else {
+        throw Exception("Error al cargar banco: ${response.statusCode}");
+      }
     } catch (e) {
-      print("️ Error cargando banco: $e");
+      print("❌ Error cargando banco: $e");
+      rethrow;
     }
   }
 

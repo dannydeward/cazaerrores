@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gramaticador - Tierras del Norte</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+            color: #fff;
+            text-align: center;
+            padding: 40px 20px;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            color: #2d3748;
+            padding: 40px 30px;
+            border-radius: 24px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        h1 { color: #2b6cb0; font-size: 2em; margin-bottom: 10px; }
+        .subtitle { color: #4a5568; font-size: 1.1em; margin-bottom: 30px; line-height: 1.5; }
+        
+        /* Contenedor optimizado para video vertical de Vimeo */
+        .video-container {
+            width: 100%;
+            max-width: 320px; /* Ancho ideal para formato vertical */
+            margin: 0 auto 30px auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            background-color: #000;
+        }
+        
+        .form-group { margin-bottom: 25px; }
+        input[type="text"] {
+            padding: 16px;
+            font-size: 18px;
+            border: 2px solid #cbd5e0;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 350px;
+            text-align: center;
+            outline: none;
+            transition: all 0.3s;
+        }
+        input[type="text"]:focus { border-color: #3182ce; box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.2); }
+
+        .btn-jugar {
+            background: linear-gradient(to right, #38a169, #2f855a);
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 16px 48px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(56, 161, 105, 0.4);
+        }
+        .btn-jugar:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(56, 161, 105, 0.5);
+        }
+        .btn-jugar:active { transform: translateY(0); }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>🏔️ Gramaticador: Tierras del Norte</h1>
+        <p class="subtitle">Domina la ortografía jugando. Cada palabra correcta te acerca a la cima, ¡pero los errores te costarán vidas!</p>
+
+        <!-- VIDEO DE VIMEO INTEGRADO -->
+        <div class="video-container">
+            <div style="padding:194.44% 0 0 0;position:relative;">
+                <iframe 
+                    src="https://player.vimeo.com/video/1230099815?badge=0&autopause=0&player_id=0&app_id=58479" 
+                    frameborder="0" 
+                    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                    title="Video de presentación de Cham">
+                </iframe>
+            </div>
+            <script src="https://player.vimeo.com/api/player.js"></script>
+        </div>
+
+        <div class="form-group">
+            <input type="text" id="nombreTester" placeholder="Escribe tu nombre de explorador" required>
+        </div>
+
+        <button class="btn-jugar" onclick="iniciarJuego()">¡COMENZAR AVENTURA!</button>
+    </div>
+
+    <script>
+        function iniciarJuego() {
+            const nombre = document.getElementById('nombreTester').value.trim();
+            if (!nombre) {
+                alert("¡Por favor, escribe tu nombre para que podamos guardar tu progreso!");
+                return;
+            }
+
+            // 1. Guardar el nombre en el navegador para que Flutter lo lea
+            localStorage.setItem('tester_nombre', nombre);
+
+            // 2. Enviar evento de inicio al servidor Flask
+            fetch('/api/log', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    tester: nombre,
+                    evento: "inicio_desde_landing",
+                    datos: { navegador: navigator.userAgent }
+                })
+            }).finally(() => {
+                // 3. Redirigir al juego
+                window.location.href = "/juego/"; 
+            });
+        }
+    </script>
+</body>
+</html>

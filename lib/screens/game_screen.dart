@@ -6,6 +6,7 @@ import '../services/question_bank_service.dart'; // Nuevo servicio anti-repetici
 import '../services/stats_service.dart';
 import 'stats_screen.dart';
 import '../models/jugador.dart';
+import 'dart:html' as html;
 
 class GameScreen extends StatefulWidget {
   const GameScreen({super.key});
@@ -112,13 +113,27 @@ class _GameScreenState extends State<GameScreen> {
         game.respuestaIncorrecta();
         mensaje = "La respuesta correcta era:\n${preguntaActual!.correcta}";
         colorMensaje = Colors.red;
+
+        // 📊 REGISTRAR FALLO (Agrega esto)
+        String nombreTester = html.window.localStorage['tester_nombre'] ?? 'Tester';
+        StatsService.enviarEvento(
+          tester:  nombreTester, // Cambiarás esto por el nombre real del tester
+          evento: "respuesta_incorrecta",
+          datos: {
+            "estacion": game.jugador.estacion,
+            "palabra_correcta": preguntaActual!.correcta,
+            "respuesta_dada": respuesta,
+            "vidas_restantes": game.vidas,
+          },
+        );
       }
     });
   }
 
-  void continuar() {
+    void continuar() {
     if (game.gameOver) {
-      Navigator.pop(context);
+      // ✅ CORRECCIÓN: Llamar a finalizarLeccion() para guardar el progreso con 0 vidas
+      finalizarLeccion();
       return;
     }
 
@@ -132,8 +147,19 @@ class _GameScreenState extends State<GameScreen> {
       _cargarPreguntaActual();
     });
   }
+     Future<void> finalizarLeccion() async {
+    // 📊 REGISTRAR PUNTO DE RETIRO O COMPLETADO
+    StatsService.enviarEvento(
+      tester: "Danny",
+      evento: game.gameOver ? "abandono_por_vidas" : "leccion_completada",
+      datos: {
+        "estacion_final": game.jugador.estacion,
+        "puntos_totales": game.puntos,
+        "correctas": game.correctas,
+        "incorrectas": game.incorrectas,
+      },
+    );
 
-  Future<void> finalizarLeccion() async {
     try {
       await StatsService.guardarPartida(
         puntuacion: game.puntos,
@@ -141,13 +167,18 @@ class _GameScreenState extends State<GameScreen> {
         incorrectas: game.incorrectas,
       );
 
-      await StatsService.avanzaEstacion();
-      
+      // ✅ CORRECCIÓN: Solo avanzar de estación si NO es Game Over
+      if (!game.gameOver) {
+        await StatsService.avanzaEstacion();
+      }
+
       final progreso = await StatsService.obtenerProgreso();
+      
+      // ✅ CORRECCIÓN: Si es Game Over, reiniciar vidas a 3 y NO avanzar
       await StatsService.guardarProgreso(
-        estacion: progreso["estacion"]!,
+        estacion: game.gameOver ? game.jugador.estacion : progreso["estacion"]!, // Misma estación si perdió
         monedas: game.monedas,
-        vidas: game.vidas,
+        vidas: game.gameOver ? 3 : game.vidas, // Reiniciar a 3 vidas si perdió
         racha: game.racha,
         puntos: game.puntos,
       );

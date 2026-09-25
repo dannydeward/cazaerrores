@@ -1,11 +1,13 @@
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 
 class StatsService {
-  // Claves de Estadísticas Históricas (Punto 6 del Resumen)
+  // Claves de Estadísticas Históricas
   static const String mejorPuntuacionKey = "mejor_puntuacion";
   static const String partidasJugadasKey = "partidas_jugadas";
-  static const String respuestasCorrectasKey = "respuestas_correctas"; // ✅ FALTABA ESTA
-  static const String respuestasIncorrectasKey = "respuestas_incorrectas"; // ✅ FALTABA ESTA
+  static const String respuestasCorrectasKey = "respuestas_correctas";
+  static const String respuestasIncorrectasKey = "respuestas_incorrectas";
 
   // Claves de Progreso Actual
   static const String estacionActualKey = "estacion_actual";
@@ -14,7 +16,7 @@ class StatsService {
   static const String rachaKey = "racha";
   static const String puntosKey = "puntos";
   
-  // Clave para Sistema de Vidas Temporizado (Punto 7 del Resumen)
+  // Clave para Sistema de Vidas Temporizado
   static const String timestampPerdidaVidaKey = "timestamp_perdida_vida";
 
   // GUARDAR PARTIDA (Estadísticas acumulativas)
@@ -25,25 +27,14 @@ class StatsService {
   }) async {
     final prefs = await SharedPreferences.getInstance();
     
-    // Actualizar mejor puntuación
     final mejor = prefs.getInt(mejorPuntuacionKey) ?? 0;
     if (puntuacion > mejor) {
       await prefs.setInt(mejorPuntuacionKey, puntuacion);
     }
 
-    // Sumar a totales históricos
-    await prefs.setInt(
-      partidasJugadasKey, 
-      (prefs.getInt(partidasJugadasKey) ?? 0) + 1
-    );
-    await prefs.setInt(
-      respuestasCorrectasKey, 
-      (prefs.getInt(respuestasCorrectasKey) ?? 0) + correctas
-    );
-    await prefs.setInt(
-      respuestasIncorrectasKey, 
-      (prefs.getInt(respuestasIncorrectasKey) ?? 0) + incorrectas
-    );
+    await prefs.setInt(partidasJugadasKey, (prefs.getInt(partidasJugadasKey) ?? 0) + 1);
+    await prefs.setInt(respuestasCorrectasKey, (prefs.getInt(respuestasCorrectasKey) ?? 0) + correctas);
+    await prefs.setInt(respuestasIncorrectasKey, (prefs.getInt(respuestasIncorrectasKey) ?? 0) + incorrectas);
   }
 
   // GUARDAR PROGRESO ACTUAL (Sesión)
@@ -63,7 +54,6 @@ class StatsService {
     await prefs.setInt(rachaKey, racha);
     await prefs.setInt(puntosKey, puntos);
 
-    // Lógica de Timestamp para recuperación de vidas (Punto 7)
     if (registrarPerdidaVida && vidas < 3) {
       await prefs.setInt(timestampPerdidaVidaKey, DateTime.now().millisecondsSinceEpoch);
     } else if (vidas >= 3) {
@@ -78,22 +68,15 @@ class StatsService {
     int vidas = prefs.getInt(vidasKey) ?? 3;
     final timestampPerdida = prefs.getInt(timestampPerdidaVidaKey);
 
-    // Calcular recuperación si hay tiempo transcurrido (Punto 7)
     if (timestampPerdida != null && vidas < 3) {
       final ahora = DateTime.now().millisecondsSinceEpoch;
       final milisegundosPasados = ahora - timestampPerdida;
-      
-      // Cada 15 minutos (900,000 ms) recupera 1 vida
       final vidasRecuperadas = (milisegundosPasados ~/ 900000).clamp(0, 3 - vidas);
       
       if (vidasRecuperadas > 0) {
         vidas += vidasRecuperadas;
-        
-        // Ajustar timestamp restando el tiempo ya "usado"
         final nuevoTimestamp = timestampPerdida + (vidasRecuperadas * 900000);
         await prefs.setInt(timestampPerdidaVidaKey, nuevoTimestamp);
-        
-        // Si llegó a 3, limpiar registro
         if (vidas >= 3) await prefs.remove(timestampPerdidaVidaKey);
       }
     }
@@ -123,5 +106,33 @@ class StatsService {
       "correctas": prefs.getInt(respuestasCorrectasKey) ?? 0,
       "incorrectas": prefs.getInt(respuestasIncorrectasKey) ?? 0,
     };
+  }
+
+  // ============================================================
+  // ENVIAR EVENTO AL SERVIDOR FLASK (NUEVO)
+  // ============================================================
+  static Future<void> enviarEvento({
+    required String tester,
+    required String evento,
+    Map<String, dynamic>? datos,
+  }) async {
+    final url = Uri.parse('http://127.0.0.1:5000/api/log');
+    
+    final payload = {
+      'tester': tester,
+      'evento': evento,
+      'datos': datos ?? {},
+    };
+
+    try {
+      await http.post(
+        url,
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode(payload),
+      );
+      print("✅ Evento enviado: $evento");
+    } catch (e) {
+      print("⚠️ Error enviando evento: $e");
+    }
   }
 }

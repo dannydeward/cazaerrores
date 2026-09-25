@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../services/stats_service.dart';
 import 'game_screen.dart';
 import 'stats_screen.dart';
+import 'dart:html' as html; // Solo para Flutter Web
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -32,10 +33,20 @@ class _HomeScreenState extends State<HomeScreen> {
     const Offset(150, 1250),  // Estación 10
   ];
 
-  @override
+    @override
   void initState() {
     super.initState();
     cargarProgreso();
+
+    // Leer el nombre guardado por la Landing Page, o usar "Tester" por defecto
+    String nombreTester = html.window.localStorage['tester_nombre'] ?? 'Tester';
+    
+        print("🚀 Jugador identificado: $nombreTester");
+    
+    StatsService.enviarEvento(
+      tester: nombreTester,
+      evento: "inicio_app"
+    );
   }
 
   Future<void> cargarProgreso() async {
@@ -171,7 +182,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: Image.asset("assets/avatar/bienvenido.png", width: 50),
                       ),
 
-                      Positioned(top: 100, right: 100, child: Image.asset("assets/avatar/cabana.png", width: 80)),
+                      Positioned(top: 150, right: 100, child: Image.asset("assets/avatar/cabana.png", width: 80)),
                       Positioned(top: 500, right: 100, child: Image.asset("assets/avatar/Chaman.png", width: 100)),
                       Positioned(top: 800, left: 100, child: Image.asset("assets/avatar/duende.png", width: 100)),
                       Positioned(top: 1100, left: 100, child: Image.asset("assets/avatar/marian.png", width: 100)),
