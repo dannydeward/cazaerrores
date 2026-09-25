@@ -29,7 +29,7 @@ def registrar_evento():
         return jsonify({"status": "error", "mensaje": str(e)}), 500
 
 # Ruta 3: Servir el banco de preguntas (archivo pesado)
-@app.route('/data/banco_preguntas.json')
+@app.route('/data/banco_preguntas.json.gz')
 def servir_banco():
     ruta_carpeta = os.path.join(app.root_path, 'static', 'data')
     # Servimos el archivo comprimido

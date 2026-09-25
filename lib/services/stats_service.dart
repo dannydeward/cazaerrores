@@ -116,7 +116,7 @@ class StatsService {
     required String evento,
     Map<String, dynamic>? datos,
   }) async {
-    final url = Uri.parse('http://127.0.0.1:5000/api/log');
+    final url = Uri.parse('ramdanny1.pythonanywhere.com');
     
     final payload = {
       'tester': tester,

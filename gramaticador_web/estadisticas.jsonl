@@ -52,3 +52,5 @@
 {"tester": "juanito", "evento": "respuesta_incorrecta", "datos": {"estacion": 1, "palabra_correcta": "yermaras", "respuesta_dada": "yernaras", "vidas_restantes": 0}, "timestamp_servidor": "2026-09-24T23:54:35.084216"}
 {"tester": "Danny", "evento": "abandono_por_vidas", "datos": {"estacion_final": 1, "puntos_totales": 30, "correctas": 3, "incorrectas": 3}, "timestamp_servidor": "2026-09-24T23:54:37.549122"}
 {"tester": "juanito", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-25T00:03:34.139904"}
+{"tester": "juanito", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-25T02:04:47.479937"}
+{"tester": "juanito", "evento": "inicio_app", "datos": {}, "timestamp_servidor": "2026-09-25T02:04:53.328211"}

@@ -18,7 +18,7 @@ class QuestionBankService {
 
     try {
       // 1. Descargar el archivo comprimido desde Flask
-      final response = await http.get( Uri.parse('http://127.0.0.1:5000/data/banco_preguntas.json'),    );
+     final response = await http.get( Uri.parse('https://ramdanny1.pythonanywhere.com/data/banco_preguntas.json.gz'), );
 
       if (response.statusCode == 200) {
         // 2. Descomprimir los bytes GZIP en memoria
